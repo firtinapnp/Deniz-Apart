@@ -1,0 +1,42 @@
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper indigo lighten-2">
+            <a href="#!" class="brand-logo left" style="margin-left:1em;"><span><img src="images/logo.png" alt="Nihan Aksu OSGB" style=" height: 4rem; margin-top:0.2rem; margin-bottom:0.2rem;"></span></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+            <ul id="navbar-pc" class="right hide-on-med-and-down" style="margin-right:1.2em;">
+                <li id="home-pc"><a href="/">Anasayfa</a></li>
+                <li><a href="/hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="/hizmetler.html">Hizmetlerimiz</a></li>
+                <li><a href="/belgeler.html">Belgelerimiz</a></li>
+                <li><a href="/referans.html">Referanslarımız</a></li>
+                <li><a href="/iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul class="dropdown-content indigo lighten-2" id="mobile-demo">
+    <li id="home-mob" ><a href="/" class="white-text">Anasayfa</a></li>
+    <li><a href="/hakkimizda.html" class="white-text">Hakkımızda</a></li>
+    <li><a href="/hizmetler.html" class="white-text">Hizmetlerimiz</a></li>
+    <li><a href="/belgeler.html" class="white-text">Belgelerimiz</a></li>
+    <li><a href="/referans.html" class="white-text">Referanslarımız</a></li>
+    <li><a href="/iletisim.html" class="white-text">İletişim</a></li>
+
+</ul>
+<script>
+$( document ).ready(function(){
+    $(".button-collapse").dropdown({
+        belowOrigin: true,
+        constrainWidth: false,
+        gutter: 0
+    });
+    var pathname = window.location.pathname;
+    if(pathname==="/" || pathname==="/index.html"){
+        $('#home-pc').addClass('active indigo darken-1');
+        $('#home-mob').addClass('active indigo darken-1');
+    }
+	$('#navbar-pc > li > a[href="'+pathname+'"]').parent().addClass('active indigo darken-1');
+    $('#mobile-demo > li > a[href="'+pathname+'"]').parent().addClass('active indigo darken-1');
+})
+
+</script>
