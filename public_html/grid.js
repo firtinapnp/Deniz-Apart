@@ -22,16 +22,19 @@ var createImageElement = function(i,j,data){
     if(jsonentry.id==photoid){
         img.setAttribute("src",jsonentry.link);
     }
-    img.setAttribute("class","responsive-img materialboxed");
+    img.setAttribute("class","responsive-img materialboxed ");
     return img;
 }
 $.getJSON( "images.json", function( data ) {
-    console.log(data.images);
     //var img = createImageElement(i,j,data.images);
     for(var i=0;i<3;i++){
         for(var j=0;j<5;j++){
             var img = createImageElement(i,j,data.images);
-            console.log(rows[i].childNodes[j].appendChild(img))
+            rows[i].childNodes[j].appendChild(img)
+
         }
     }
 });
+ $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
