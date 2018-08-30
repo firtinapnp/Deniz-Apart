@@ -30,6 +30,10 @@ body {
    width: 100%;
 
  }
+ #lightboxmodal{
+    background-color:rgba(0,0,0,0.8);
+ }
+
  .parallax-container {
       height:30rem;
 }

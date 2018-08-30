@@ -1,67 +1,55 @@
-<div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper indigo lighten-2">
-            <a href="#!" class="brand-logo left" style="margin-left:1em;"><span><img src="images/logo.png" alt="Nihan Aksu OSGB" style=" height: 4rem; margin-top:0.2rem; margin-bottom:0.2rem;"></span></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
-            <ul id="navbar-pc" class="right hide-on-med-and-down" style="margin-right:1.2em;">
-                <li><a href="#grid">Grid</a></li>
-                <li><a href="#first-div">First Div</a></li>
-                <li><a href="#second-div">Second Div</a></li>
-                <li><a href="#third-div">Third Div</a></li>
-                <li><a href="/iletisim.html">İletişim</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<ul class="dropdown-content hide-on-large-only indigo lighten-2" id="mobile-demo">
-    <li><a href="#grid" class="white-text">Grid</a></li>
-    <li><a href="#first-div" class="white-text">First Div</a></li>
-    <li><a href="#second-div" class="white-text">Second Div</a></li>
-    <li><a href="#third-div" class="white-text">Third Div</a></li>
-    <li><a href="/iletisim.html" class="white-text">İletişim</a></li>
-</ul>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark unique-color">
+    <a class="navbar-brand" href="#">Logo Here</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#first-div">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#second-div">Second Div</a></li>
+            <li class="nav-item"><a class="nav-link" href="#third-div">Third Div</a></li>
+        </ul>
+    </div>
+</nav>
 <script>
-    $( document ).ready(function(){
-        $(".button-collapse").dropdown({
-            belowOrigin: true,
-            constrainWidth: false,
-            gutter: 0
-        });
-        //click to scroll2div handler
-        var nav = $('nav');
-        var navheight= nav.outerHeight();
-        var divs = $('main').children();
-        nav.find('a').on('click', function () {
-            var $clicked = $(this);
-            var id = $clicked.attr('href');
+$( document ).ready(function(){
+    //click to scroll2div handler
+    var nav = $('nav');
+    var navheight= nav.outerHeight();
+    var divs = $('main').children();
+    nav.find('a').on('click', function () {
+        var $clicked = $(this);
+        var id = $clicked.attr('href');
+        if(id!=="#!"){
             $('html, body').animate({
-                scrollTop: $(id).offset().top - navheight+1
+                scrollTop: $(id).offset().top - navheight
             }, 300);
-
-            return false;
-        });
-
-        //scrollspy
-        var scrollspy=function(){
-            var scrollpos = $(this).scrollTop();
-            divs.each(function() {
-                var top = $(this).offset().top - navheight;
-                var bottom = top + $(this).outerHeight();
-                if (scrollpos >= top && scrollpos <= bottom) {
-                    console.log(scrollpos);
-                    console.log(top);
-                    console.log(bottom);
-                    console.log($(this));
-                    var parent = nav.find('a').parent();
-                    parent.removeClass('active indigo darken-1');
-                    parent.addClass("indigo lighten-2");
-                    var x = nav.find('a[href="#'+$(this).attr('id')+'"]');
-                    x.parent().addClass('active indigo darken-1');
-                }
-            });
         }
-        var x = nav.find('a[href="#'+$(divs[0]).attr('id')+'"]');
-        x.parent().addClass('active indigo darken-1');
-        $(window).on('scroll', scrollspy);
+        return false;
     });
+
+    //scrollspy
+    var scrollspy=function(){
+        var scrollpos = $(this).scrollTop();
+        divs.each(function() {
+            var top = $(this).offset().top - navheight;
+            var bottom = top + $(this).outerHeight();
+            if (scrollpos >= top && scrollpos <= bottom) {
+                console.log(scrollpos);
+                console.log(top);
+                console.log(bottom);
+                console.log($(this));
+                var parent = nav.find('a').parent();
+                parent.removeClass('active darken-1');
+                parent.addClass(" lighten-2");
+                var x = nav.find('a[href="#'+$(this).attr('id')+'"]');
+                x.parent().addClass('active  darken-1');
+            }
+        });
+    }
+    var x = nav.find('a[href="#'+$(divs[0]).attr('id')+'"]');
+    x.parent().addClass('active  darken-1');
+    $(window).on('scroll', scrollspy);
+});
 </script>
