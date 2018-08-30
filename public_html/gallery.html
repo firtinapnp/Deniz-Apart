@@ -8,7 +8,7 @@
         <div class="row">
             <div id="carousel-example-1z" class="col col-md-6 offset-md-3 carousel slide carousel-fade" data-ride="carousel">
                 <!--Slides-->
-                <div class="carousel-inner" role="listbox" id="carousel-gallery">
+                <div class="carousel-inner view zoom" role="listbox" id="carousel-gallery">
 
                 </div>
                 <!--/.Slides-->
@@ -30,16 +30,13 @@
 
     <!--Modal: modalYT-->
     <div class="modal fade" id="lightboxmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <!--Content-->
             <div class="modal-content" style="opacity:1;">
                 <!--Body-->
                 <div class="modal-body mb-0 p-0">
-                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half" >
-                        <iframe id="iframe_for_lightbox_image" class="embed-responsive-item" src="" allowfullscreen></iframe>
-                    </div>
+                    <img id="lightbox_image" class="w-100" src=""></img>
                 </div>
-
                 <!--Footer-->
                 <div class="modal-footer justify-content-center flex-column flex-md-row">
                     <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>

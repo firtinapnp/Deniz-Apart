@@ -15,7 +15,7 @@ for(var i=0;i<15;i++){
     carousel_as[i].setAttribute("style","cursor:zoom-in");
     carousel_as[i].setAttribute("data-target","#lightboxmodal");
     imgs[i] = document.createElement("img");
-    imgs[i].setAttribute("class","d-block w-100");
+    imgs[i].setAttribute("class","d-block w-100 img-fluid");
     carousel_list[i].appendChild(carousel_as[i]);
     carousel_as[i].appendChild(imgs[i]);
     carouselEl.appendChild(carousel_list[i]);
@@ -45,6 +45,6 @@ $(document).on('click', '[data-toggle="modal"]', function(event) {
     event.preventDefault();
     var src=$(this).attr("href");
     console.log($("#iframe_for_lightbox_image"))
-    
-    $("#iframe_for_lightbox_image")[0].setAttribute("src",src);
+
+    $("#lightbox_image")[0].setAttribute("src",src);
 });

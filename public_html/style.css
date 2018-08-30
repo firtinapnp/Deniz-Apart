@@ -4,12 +4,7 @@ body {
    min-height: 100vh;
    flex-direction: column;
  }
-#mobile-demo li:hover {
-   background-color: rgb(90,116,181);
-}
-#navbar-pc li:hover {
-   background-color: rgb(90,116,181);
-}
+
  main {
    flex: 1 0 auto;
  }
