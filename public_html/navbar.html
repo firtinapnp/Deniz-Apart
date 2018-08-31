@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark unique-color">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark mdb-color darken-2">
     <a class="navbar-brand" href="#">Logo Here</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,6 +20,7 @@ $( document ).ready(function(){
     nav.find('a').on('click', function () {
         var $clicked = $(this);
         var id = $clicked.attr('href');
+        console.log("Clicked Now")
         if(id!=="#!"){
             $('html, body').animate({
                 scrollTop: $(id).offset().top - navheight
@@ -35,20 +36,15 @@ $( document ).ready(function(){
             var top = $(this).offset().top - navheight;
             var bottom = top + $(this).outerHeight();
             if (scrollpos >= top && scrollpos <= bottom) {
-                console.log(scrollpos);
-                console.log(top);
-                console.log(bottom);
-                console.log($(this));
                 var parent = nav.find('a').parent();
-                parent.removeClass('active darken-1');
-                parent.addClass(" lighten-2");
+                parent.removeClass('active');
                 var x = nav.find('a[href="#'+$(this).attr('id')+'"]');
-                x.parent().addClass('active  darken-1');
+                x.parent().addClass('active');
             }
         });
     }
     var x = nav.find('a[href="#'+$(divs[0]).attr('id')+'"]');
-    x.parent().addClass('active  darken-1');
+    x.parent().addClass('active');
     $(window).on('scroll', scrollspy);
 });
 </script>

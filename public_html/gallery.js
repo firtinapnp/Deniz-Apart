@@ -10,18 +10,22 @@ for(var i=0;i<15;i++){
     }else{
         carousel_list[i].setAttribute("class","carousel-item");
     }
+    var div=document.createElement("div");
+    div.setAttribute("class","view");
+    var mask=document.createElement("div");
+    mask.setAttribute("class","mask rgba-indigo-slight");
     carousel_as[i]=document.createElement("a");
     carousel_as[i].setAttribute("data-toggle","modal");
     carousel_as[i].setAttribute("style","cursor:zoom-in");
     carousel_as[i].setAttribute("data-target","#lightboxmodal");
     imgs[i] = document.createElement("img");
     imgs[i].setAttribute("class","d-block w-100 img-fluid");
-    carousel_list[i].appendChild(carousel_as[i]);
+    carousel_list[i].appendChild(div);
+    div.appendChild(carousel_as[i]);
     carousel_as[i].appendChild(imgs[i]);
+    carousel_as[i].appendChild(mask);
     carouselEl.appendChild(carousel_list[i]);
 }
-
-
 var getSource = function(i,j,data){
     var photoid=i*4+j+1;
     var jsonentry=data[photoid-1];
@@ -40,11 +44,22 @@ $.getJSON( "images.json", function( data ) {
     }
 
 });
+$(document).ready(function(){
+    $('#main-carousel').carousel({
+        interval:4000
+    });
+
+});
 
 $(document).on('click', '[data-toggle="modal"]', function(event) {
     event.preventDefault();
     var src=$(this).attr("href");
-    console.log($("#iframe_for_lightbox_image"))
-
     $("#lightbox_image")[0].setAttribute("src",src);
+});
+
+$("#lightboxmodal").on('show.bs.modal', function(){
+    $("#main-carousel").carousel("pause");
+});
+$("#lightboxmodal").on('hidden.bs.modal', function(){
+    $("#main-carousel").carousel("cycle");
 });

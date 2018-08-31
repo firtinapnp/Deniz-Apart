@@ -20,30 +20,52 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
+  integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
+  integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
+  crossorigin=""></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
     <script>
     $(document).ready(function(){
+        //Waves Initialization: (Reference: https://mdbootstrap.com/support/general/why-does-mdb-js-have-to-be-in-the-body-tag/#post-11708)
+        Waves.attach('.btn, .btn-floating', ['waves-light']);
+        Waves.attach('.view .mask', ['waves-light']);
+        Waves.attach('.waves-light', ['waves-light']);
+        Waves.attach('.navbar-nav a, .nav-icons li a, .navbar form, .nav-tabs .nav-item', ['waves-light']);
+        Waves.attach('.navbar-brand', ['waves-light']);
+        Waves.attach('.pager li a', ['waves-light']);
+        Waves.attach('.pagination .page-item .page-link', ['waves-effect']);
+        Waves.init();//Preloading script
+
         $("header").load("navbar.html");
         $("footer").load("footer.html");
         $("#first-div").load("gallery.html");
+        $("#second-div").load("iletisim.html");
     });
     </script>
     <style>
     #first-div{
-        height:50rem;
         padding-top:4rem;
-        background-color:red;
+        padding-bottom:8rem;
     }
     #second-div{
         height:70rem;
         background-color:green;
+        padding-top:4rem;
+        padding-bottom:8rem;
 
     }
     #third-div{
         height:60rem;
         background-color:blue;
-
+        padding-top:4rem;
+        padding-bottom:8rem;
     }
     </style>
     <header></header>
@@ -53,16 +75,14 @@
 
         </div>
         <div id="second-div">
-            <div class="container">
-                <div class="row">
-                    
-                </div>
-            </div>
+
         </div>
         <div id="third-div">
 
         </div>
     </main>
-    <footer class="page-footer font-small stylish-color pt-4"></footer>
+    <footer class="page-footer font-small stylish-color pt-4">
+
+    </footer>
 </body>
 </html>
