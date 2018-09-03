@@ -1,14 +1,34 @@
 body {
-   background-color: #f1f1f1;
+   background-color: #b7babf;
    display: flex;
    min-height: 100vh;
    flex-direction: column;
  }
 #mobile-demo li:hover {
-   background-color: rgb(90,116,181);
+   background-color: #BAC3CF;
 }
 #navbar-pc li:hover {
-   background-color: rgb(90,116,181);
+   background-color: #BAC3CF;
+}
+#logo{
+    height: 4rem;
+    margin-top:0.2rem;
+    margin-bottom:0.2rem;
+}
+@media only screen and (max-width: 600px) {
+    #logo{
+        height:3rem;
+        margin-top:0.5rem;
+    }
+    .list-parallax {
+        height:60rem;
+    }
+    li h1{
+        font-size:2.92rem;
+    }
+    li h2{
+        font-size:2.28rem;
+    }
 }
  main {
    flex: 1 0 auto;
@@ -16,23 +36,22 @@ body {
  .navbar-fixed img{
      max-height: 64px;
  }
- #ku-logo {
-     height: 3.56rem;
+ .darken-a-bit{
+     filter:brightness(0.55);
  }
- .parallax img{
-     filter: brightness(0.4);
+ .darken-a-bit-2{
+     filter:brightness(0.35);
  }
 .leave-padding{
     padding-top:4rem;
 }
+
  #map {
    height: 400px;
    width: 100%;
 
  }
- .parallax-container {
-      height:30rem;
-}
+
  #carousel-content{
     height:550px;
  }

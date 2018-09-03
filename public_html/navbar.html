@@ -1,67 +1,41 @@
 <div class="navbar-fixed">
     <nav>
-        <div class="nav-wrapper indigo lighten-2">
-            <a href="#!" class="brand-logo left" style="margin-left:1em;"><span><img src="images/logo.png" alt="Nihan Aksu OSGB" style=" height: 4rem; margin-top:0.2rem; margin-bottom:0.2rem;"></span></a>
+        <div class="nav-wrapper grey darken-1">
+            <a href="#!" class="brand-logo left" style="margin-left:1em;"><span><img src="images/logo.jpg" alt="Nihan Aksu TMGDK" id="logo"></span></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul id="navbar-pc" class="right hide-on-med-and-down" style="margin-right:1.2em;">
-                <li><a href="#grid">Grid</a></li>
-                <li><a href="#first-div">First Div</a></li>
-                <li><a href="#second-div">Second Div</a></li>
-                <li><a href="#third-div">Third Div</a></li>
+                <li id="home-pc"><a href="/">Anasayfa</a></li>
+                <li><a href="/hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="/mevzuat.html">Mevzuat</a></li>
+                <li><a href="/belgeler.html">Belgelerimiz</a></li>
                 <li><a href="/iletisim.html">İletişim</a></li>
             </ul>
         </div>
     </nav>
 </div>
-<ul class="dropdown-content hide-on-large-only indigo lighten-2" id="mobile-demo">
-    <li><a href="#grid" class="white-text">Grid</a></li>
-    <li><a href="#first-div" class="white-text">First Div</a></li>
-    <li><a href="#second-div" class="white-text">Second Div</a></li>
-    <li><a href="#third-div" class="white-text">Third Div</a></li>
+<ul class="dropdown-content grey darken-1" id="mobile-demo">
+    <li id="home-mob" ><a href="/" class="white-text">Anasayfa</a></li>
+    <li><a href="/hakkimizda.html" class="white-text">Hakkımızda</a></li>
+    <li><a href="/mevzuat.html" class="white-text">Mevzuat</a></li>
+    <li><a href="/belgeler.html" class="white-text">Belgelerimiz</a></li>
     <li><a href="/iletisim.html" class="white-text">İletişim</a></li>
 </ul>
 <script>
-    $( document ).ready(function(){
-        $(".button-collapse").dropdown({
-            belowOrigin: true,
-            constrainWidth: false,
-            gutter: 0
-        });
-        //click to scroll2div handler
-        var nav = $('nav');
-        var navheight= nav.outerHeight();
-        var divs = $('main').children();
-        nav.find('a').on('click', function () {
-            var $clicked = $(this);
-            var id = $clicked.attr('href');
-            $('html, body').animate({
-                scrollTop: $(id).offset().top - navheight+1
-            }, 300);
-
-            return false;
-        });
-
-        //scrollspy
-        var scrollspy=function(){
-            var scrollpos = $(this).scrollTop();
-            divs.each(function() {
-                var top = $(this).offset().top - navheight;
-                var bottom = top + $(this).outerHeight();
-                if (scrollpos >= top && scrollpos <= bottom) {
-                    console.log(scrollpos);
-                    console.log(top);
-                    console.log(bottom);
-                    console.log($(this));
-                    var parent = nav.find('a').parent();
-                    parent.removeClass('active indigo darken-1');
-                    parent.addClass("indigo lighten-2");
-                    var x = nav.find('a[href="#'+$(this).attr('id')+'"]');
-                    x.parent().addClass('active indigo darken-1');
-                }
-            });
-        }
-        var x = nav.find('a[href="#'+$(divs[0]).attr('id')+'"]');
-        x.parent().addClass('active indigo darken-1');
-        $(window).on('scroll', scrollspy);
+$( document ).ready(function(){
+    $(".button-collapse").dropdown({
+        belowOrigin: true,
+        constrainWidth: false,
+        gutter: 0
     });
+    console.log($(".button-collapse").dropdown);
+    var pathname = window.location.pathname;
+    console.log(pathname);
+    if(pathname==="/" || pathname==="/index.html"){
+        $('#home-pc').addClass('active orange darken-2');
+        $('#home-mob').addClass('active orange darken-2');
+    }
+	$('#navbar-pc > li > a[href="'+pathname+'"]').parent().addClass('active orange darken-2');
+    $('#mobile-demo > li > a[href="'+pathname+'"]').parent().addClass('active orange darken-2');
+})
+
 </script>

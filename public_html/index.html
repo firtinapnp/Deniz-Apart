@@ -13,47 +13,101 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-    $(document).ready(function(){
-        $("header").load("navbar.html");
-        $("footer").load("footer.html");
-        $("#grid").load("grid.html");
-    });
-    </script>
-    <style>
-    #first-div{
-        height:50rem;
-        background-color:red;
-    }
-    #second-div{
-        height:70rem;
-        background-color:green;
 
-    }
-    #third-div{
-        height:30rem;
-        background-color:blue;
+    <header>
+        <script>
+        $(document).ready(function(){
+            $("header").load("navbar.html");
+            $("footer").load("footer.html");
+            Materialize.fadeInImage('#welcome');
+            Materialize.fadeInImage('#contact-us');
 
-    }
-    </style>
-    <header></header>
+            $('.parallax').parallax();
+            $(".collection").hover(function(){
+                $( this ).addClass("orange darken-2");
+            },function(){
+                $( this ).removeClass("orange darken-2");
+            });
+        });
+        </script>
+    </header>
 
     <main>
-        <div id="grid">
+        <div class="parallax-container">
+            <div class="parallax"><img  class="darken-a-bit" src="images/banner.png"></div>
+            <ul id="welcome" class="caption center-align leave-padding">
+                <li>
+                    <h1 class="white-text">Aksu Tehlikeli Madde Güvenlik Danışmanlığı'na</h1>
+                </li>
+                <li>
+                    <h2 class="center-align blue-grey-text text-lighten-3">Hoşgeldiniz!</h2>
+                </li>
+            </ul>
 
         </div>
-        <div id="first-div">
 
-        </div>
-        <div id="second-div">
 
-        </div>
-        <div id="third-div">
-
+        <div class="container">
+            <h2 class="center-align">Hizmet Verdiğimiz İllerimiz</h2>
+            <img src="images/harita.png" class="responsive-img" alt="Harita">
         </div>
 
+
+        <div class="parallax-container list-parallax">
+            <div class="parallax"><img class="darken-a-bit-2" src="images/banner.png"></div>
+            <ul id="contact-us" class="caption center-align leave-padding">
+                <li>
+                    <h2 class="white-text">Hizmetlerimiz</h2>
+                    <div class="row">
+                        <div class="col m6 s12">
+                            <ul class="collection hoverable">
+                                <li class="collection-item transparent ">
+                                    <h5 class="white-text">Tehlikeli Madde Güvenlik Danışmanlığı</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col m6 s12">
+                            <ul class="collection hoverable">
+                                <li class="collection-item transparent">
+                                    <h5 class="white-text">TMGD Muafiyet Raporu Düzenlenmesi</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col m6 s12">
+                            <ul class="collection hoverable">
+                                <li class="collection-item transparent">
+                                    <h5 class="white-text">Tehlikeli Madde Faaliyet Belgesi Danışmanlığı</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col m6 s12">
+                            <ul class="collection hoverable">
+                                <li class="collection-item transparent">
+                                    <h5 class="white-text">Yıllık Faaliyet Raporunun Hazırlanması</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col m6 s12">
+                            <ul class="collection hoverable">
+                                <li class="collection-item transparent">
+                                    <h5 class="white-text">Saha Farkındalık Eğitimi</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col m6 s12">
+                            <ul class="collection hoverable">
+                                <li class="collection-item transparent">
+                                    <h5 class="white-text">Yangın Eğitimi</h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
     </main>
-    <footer></footer>
+    <footer >
+    </footer>
 </body>
 </html>
