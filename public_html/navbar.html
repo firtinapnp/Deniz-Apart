@@ -1,23 +1,19 @@
 <div class="navbar-fixed">
     <nav>
-        <div class="nav-wrapper grey darken-1">
-            <a href="#!" class="brand-logo left" style="margin-left:1em;"><span><img src="images/logo.jpg" alt="Nihan Aksu TMGDK" id="logo"></span></a>
+        <div class="nav-wrapper blue-grey darken-4">
+            <a href="#!" class="brand-logo left" style="margin-left:1em;"><span><img src="images/logo.png" alt="Deniz Apart" id="logo"></span></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul id="navbar-pc" class="right hide-on-med-and-down" style="margin-right:1.2em;">
                 <li id="home-pc"><a href="/">Anasayfa</a></li>
-                <li><a href="/hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="/mevzuat.html">Mevzuat</a></li>
-                <li><a href="/belgeler.html">Belgelerimiz</a></li>
+                <li><a href="/hakkimizda.html">Apartımız</a></li>
                 <li><a href="/iletisim.html">İletişim</a></li>
             </ul>
         </div>
     </nav>
 </div>
-<ul class="dropdown-content grey darken-1" id="mobile-demo">
+<ul class="dropdown-content blue-grey darken-4" id="mobile-demo">
     <li id="home-mob" ><a href="/" class="white-text">Anasayfa</a></li>
-    <li><a href="/hakkimizda.html" class="white-text">Hakkımızda</a></li>
-    <li><a href="/mevzuat.html" class="white-text">Mevzuat</a></li>
-    <li><a href="/belgeler.html" class="white-text">Belgelerimiz</a></li>
+    <li><a href="/hakkimizda.html" class="white-text">Apartımız</a></li>
     <li><a href="/iletisim.html" class="white-text">İletişim</a></li>
 </ul>
 <script>
@@ -31,11 +27,11 @@ $( document ).ready(function(){
     var pathname = window.location.pathname;
     console.log(pathname);
     if(pathname==="/" || pathname==="/index.html"){
-        $('#home-pc').addClass('active orange darken-2');
-        $('#home-mob').addClass('active orange darken-2');
+        $('#home-pc').addClass('active light-blue darken-1');
+        $('#home-mob').addClass('active light-blue darken-1');
     }
-	$('#navbar-pc > li > a[href="'+pathname+'"]').parent().addClass('active orange darken-2');
-    $('#mobile-demo > li > a[href="'+pathname+'"]').parent().addClass('active orange darken-2');
+	$('#navbar-pc > li > a[href="'+pathname+'"]').parent().addClass('active light-blue darken-1');
+    $('#mobile-demo > li > a[href="'+pathname+'"]').parent().addClass('active light-blue darken-1');
 })
 
 </script>

@@ -1,15 +1,10 @@
 body {
-   background-color: #b7babf;
+   background-color: #eceff1;
    display: flex;
    min-height: 100vh;
    flex-direction: column;
  }
-#mobile-demo li:hover {
-   background-color: #BAC3CF;
-}
-#navbar-pc li:hover {
-   background-color: #BAC3CF;
-}
+
 #logo{
     height: 4rem;
     margin-top:0.2rem;

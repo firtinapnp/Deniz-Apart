@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ana Sayfa</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet"  href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
@@ -19,14 +19,14 @@
         $(document).ready(function(){
             $("header").load("navbar.html");
             $("footer").load("footer.html");
+            $("#gallery").load("gallery.html");
             Materialize.fadeInImage('#welcome');
             Materialize.fadeInImage('#contact-us');
-
             $('.parallax').parallax();
             $(".collection").hover(function(){
-                $( this ).addClass("orange darken-2");
+                $( this ).addClass("light-blue darken-1");
             },function(){
-                $( this ).removeClass("orange darken-2");
+                $( this ).removeClass("light-blue darken-1");
             });
         });
         </script>
@@ -34,27 +34,24 @@
 
     <main>
         <div class="parallax-container">
-            <div class="parallax"><img  class="darken-a-bit" src="images/bg.jpg"></div>
-            <ul id="welcome" class="caption center-align leave-padding">
+            <div class="parallax"><img  class="darken-a-bit" src="images/bg-image.jpg"></div>
+            <ul id="welcome" class="caption center-align leave-padding container">
                 <li>
-                    <h1 class="white-text">Aksu Tehlikeli Madde Güvenlik Danışmanlığı'na</h1>
+                    <h1 class="white-text">Deniz Kız Öğrenci Apartları</h1>
                 </li>
                 <li>
-                    <h2 class="center-align blue-grey-text text-lighten-3">Hoşgeldiniz!</h2>
+                    <h2 class="center-align flow-text blue-grey-text text-lighten-3">Üniversiteye yürüyüş mesafesinde, ulaşımı rahat, eviniz kadar güvenli ve konforlu kız apartımız ilk senesinde, yepyeni binasında hizmetinizdedir.</h2>
                 </li>
             </ul>
 
         </div>
 
 
-        <div class="container">
-            <h2 class="center-align">Hizmet Verdiğimiz İllerimiz</h2>
-            <img src="images/harita.png" class="responsive-img" alt="Harita">
-        </div>
+        <div id="gallery"></div>
 
 
         <div class="parallax-container list-parallax">
-            <div class="parallax"><img class="darken-a-bit-2" src="images/banner.png"></div>
+            <div class="parallax"><img class="darken-a-bit-2" src="images/bg-image-2.jpg"></div>
             <ul id="contact-us" class="caption center-align leave-padding">
                 <li>
                     <h2 class="white-text">Hizmetlerimiz</h2>
