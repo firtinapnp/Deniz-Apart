@@ -5,4 +5,4 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     id: 'mapbox.streets',
 }).addTo(mymap);
 var marker = L.marker([36.904716,30.647495]).addTo(mymap);
-marker.bindPopup("<b>Nihan Aksu OSGB</b><br>Ofisimiz.").openPopup();
+marker.bindPopup("<b>Deniz Apart</b><br>Ofisimiz.").openPopup();
